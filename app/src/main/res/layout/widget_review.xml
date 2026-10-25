@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/w_root" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:padding="12dp" android:background="@drawable/widget_bg">
+    <TextView android:id="@+id/w_title" android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:textColor="#FFFFFF" android:textSize="13sp" android:textStyle="bold" />
+    <TextView android:id="@+id/r1" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="4dp" android:textColor="#E0E0E0" android:textSize="12sp" android:maxLines="2" android:visibility="gone" />
+    <TextView android:id="@+id/r2" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="4dp" android:textColor="#E0E0E0" android:textSize="12sp" android:maxLines="2" android:visibility="gone" />
+    <TextView android:id="@+id/r3" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="4dp" android:textColor="#E0E0E0" android:textSize="12sp" android:maxLines="2" android:visibility="gone" />
+    <TextView android:id="@+id/r4" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="4dp" android:textColor="#E0E0E0" android:textSize="12sp" android:maxLines="2" android:visibility="gone" />
+    <TextView android:id="@+id/r5" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="4dp" android:textColor="#E0E0E0" android:textSize="12sp" android:maxLines="2" android:visibility="gone" />
+    <TextView android:id="@+id/w_empty" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="6dp" android:textColor="#B0B0B0" android:textSize="12sp" android:visibility="gone" />
+</LinearLayout>
