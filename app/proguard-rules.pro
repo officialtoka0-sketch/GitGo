@@ -1,0 +1,4 @@
+-dontwarn org.eclipse.jgit.**
+-dontwarn javax.management.**
+-dontwarn java.lang.management.**
+-keep class org.eclipse.jgit.** { *; }
