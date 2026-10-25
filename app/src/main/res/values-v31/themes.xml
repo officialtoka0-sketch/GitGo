@@ -1,0 +1,6 @@
+<resources>
+    <style name="Theme.GitGo" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/gitgo_black</item>
+        <item name="android:windowSplashScreenBackground">@color/gitgo_black</item>
+    </style>
+</resources>
