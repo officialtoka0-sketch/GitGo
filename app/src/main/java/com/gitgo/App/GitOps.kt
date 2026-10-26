@@ -43,6 +43,8 @@ class Monitor(private val title: String, private val ctl: Ctl) : ProgressMonitor
     }
     override fun endTask() {}
     override fun isCancelled(): Boolean = ctl.cancelled()
+    // В JGit 7 этот метод абстрактный (в 5.x был default) — переопределение нужно для сборки
+    override fun showDuration(enabled: Boolean) {}
 }
 
 class GitOps(ctx: Context, private val prefs: Prefs) {
