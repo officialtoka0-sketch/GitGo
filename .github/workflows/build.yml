@@ -27,11 +27,21 @@ jobs:
         run: |
           echo "$KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/release.jks"
           echo "KEYSTORE_FILE=$RUNNER_TEMP/release.jks" >> "$GITHUB_ENV"
-      - name: Build
-        run: gradle assembleDebug assembleRelease bundleRelease --stacktrace
+      - name: Build debug APK
+        shell: bash
+        run: gradle assembleDebug --console=plain --stacktrace 2>&1 | tee build.log
+      - name: Show errors (short)
+        if: failure()
+        shell: bash
+        run: |
+          {
+            echo '### Ошибки сборки'
+            echo '```'
+            grep -E "^e: |^w: .*error|What went wrong|Execution failed|Could not |AAPT|error:|Unresolved|FAILURE" -A4 build.log | head -120
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
+        if: success()
         with:
-          name: GitGo-apk-aab
-          path: |
-            app/build/outputs/apk/**/*.apk
-            app/build/outputs/bundle/**/*.aab
+          name: GitGo-apk
+          path: app/build/outputs/apk/debug/*.apk
